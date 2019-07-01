@@ -9,7 +9,6 @@ dotnet: 2.2
 services:
 - mysql
 script:
-  - cd eform-appointmentBase
   - dotnet restore
   - dotnet build Microting.AppointmentBase.sln
   - dotnet test -v n Microting.AppointmentBase.Unit.Tests/Microting.AppointmentBase.Unit.Tests.csproj
