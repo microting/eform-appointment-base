@@ -40,6 +40,9 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public string Subject { get; set; }
 
         [StringLength(255)]
+        public string ProcessingState { get; set; }
+
+        [StringLength(255)]
         public string Location { get; set; }
 
         public string Body { get; set; }
@@ -67,7 +70,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 
         public int? SdkeFormId { get; set; }
 
-        public string ResponseText { get; set; }
+        public string Response { get; set; }
 
         public short? ColorRule { get; set; }
     }
