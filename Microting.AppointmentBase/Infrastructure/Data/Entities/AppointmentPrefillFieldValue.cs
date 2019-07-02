@@ -44,10 +44,10 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 
         public async Task Create(AppointmentPnDbContext dbContext)
         {
-            CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
             Version = 1;
-            WorkflowState = Constants.WorkflowStates.Created;
+            WorkflowState = eFormShared.Constants.WorkflowStates.Created;
             
             dbContext.AppointmentPrefillFieldValues.Add(this);
             dbContext.SaveChanges();
@@ -76,7 +76,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 
             if (dbContext.ChangeTracker.HasChanges())
             {
-                appointmentPrefillFieldValue.UpdatedAt = DateTime.Now;
+                appointmentPrefillFieldValue.UpdatedAt = DateTime.UtcNow;
                 appointmentPrefillFieldValue.Version += 1;
                 dbContext.SaveChanges();
                 
@@ -98,7 +98,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 
             if (dbContext.ChangeTracker.HasChanges())
             {
-                appointmentPrefillFieldValue.UpdatedAt = DateTime.Now;
+                appointmentPrefillFieldValue.UpdatedAt = DateTime.UtcNow;
                 appointmentPrefillFieldValue.Version += 1;
                 dbContext.SaveChanges();
                 
