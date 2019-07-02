@@ -6,7 +6,7 @@
 
     <ItemGroup>
       <Folder Include="Infrastructure\Data\Consts" />
-      <Folder Include="Infrastructure\Migrations" />
+      <Folder Include="Migrations" />
     </ItemGroup>
 
     <ItemGroup>
