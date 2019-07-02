@@ -1,4 +1,4 @@
-﻿/*
+/*
 The MIT License (MIT)
 Copyright (c) 2007 - 2019 Microting A/S
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,15 +18,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-using System;
+using System.ComponentModel.DataAnnotations;
+using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
-namespace DBMigrator
+namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 {
-    class Program
+    public class AppointmentSiteVersion : BaseEntity
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        public int? AppointmentId { get; set; }
+
+        public int MicrotingSiteUid { get; set; }
+
+        public string ExceptionString { get; set; }
+
+        [StringLength(255)]
+        public string SdkCaseId { get; set; }
+
+        [StringLength(255)]
+        public string ProcessingState { get; set; }
+
+        public short? Completed { get; set; }
+
+        public int? AppointmentSiteId { get; set; }
     }
 }

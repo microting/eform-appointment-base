@@ -6,8 +6,6 @@
 
     <ItemGroup>
       <Folder Include="Infrastructure\Data\Consts" />
-      <Folder Include="Infrastructure\Data\Entities" />
-      <Folder Include="Infrastructure\Data\Factories" />
       <Folder Include="Infrastructure\Migrations" />
     </ItemGroup>
 
