@@ -33,5 +33,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public string FieldValue { get; set; }
 
         public int? AppointmentFvId { get; set; }
+        
+        public int AppointmentPrefillFieldValueId { get; set; }
     }
 }

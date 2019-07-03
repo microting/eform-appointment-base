@@ -123,7 +123,8 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                     CreatedByUserId = appointmentPrefillFieldValue.CreatedByUserId,
                     UpdatedAt = appointmentPrefillFieldValue.UpdatedAt,
                     UpdatedByUserId = appointmentPrefillFieldValue.UpdatedByUserId,
-                    WorkflowState = appointmentPrefillFieldValue.WorkflowState
+                    WorkflowState = appointmentPrefillFieldValue.WorkflowState,
+                    AppointmentPrefillFieldValueId = appointmentPrefillFieldValue.Id
                 };
             return appointmentPrefillFieldValueVersion;
         }
