@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microting.AppointmentBase.Infrastructure.Data.Constants;
 using Microting.AppointmentBase.Infrastructure.Data.Entities;
 using NUnit.Framework;
-using Microting.AppointmentBase.Infrastructure.Data.Constants;
 
 namespace Microting.AppointmentBase.Unit.Tests
 {
@@ -270,7 +270,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointment.Id, appointments[0].Id);
             Assert.AreEqual(appointment.Version, appointments[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointments[0].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed, appointments[0].WorkflowState);
             Assert.AreEqual(appointment.CreatedAt.ToString(), appointments[0].CreatedAt.ToString());
             Assert.AreEqual(appointment.CreatedByUserId, appointments[0].CreatedByUserId);
             Assert.AreEqual(appointment.UpdatedAt.ToString(), appointments[0].UpdatedAt.ToString());
@@ -295,7 +295,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointment.Id, appointmentVersions[0].AppointmentId);
             Assert.AreEqual(1, appointmentVersions[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentVersions[0].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Created, appointmentVersions[0].WorkflowState);
             Assert.AreEqual(appointment.CreatedAt.ToString(), appointmentVersions[0].CreatedAt.ToString());
             Assert.AreEqual(appointment.CreatedByUserId, appointmentVersions[0].CreatedByUserId);
             Assert.AreEqual(oldUpdatedAt.ToString(), appointmentVersions[0].UpdatedAt.ToString());
@@ -320,7 +320,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointment.Id, appointmentVersions[1].AppointmentId);
             Assert.AreEqual(2, appointmentVersions[1].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointmentVersions[1].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed, appointmentVersions[1].WorkflowState);
             Assert.AreEqual(appointment.CreatedAt.ToString(), appointmentVersions[1].CreatedAt.ToString());
             Assert.AreEqual(appointment.CreatedByUserId, appointmentVersions[1].CreatedByUserId);
             Assert.AreEqual(appointment.UpdatedAt.ToString(), appointmentVersions[1].UpdatedAt.ToString());

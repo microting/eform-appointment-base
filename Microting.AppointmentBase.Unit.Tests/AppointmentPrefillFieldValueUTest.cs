@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microting.AppointmentBase.Infrastructure.Data.Entities;
-using Microting.AppointmentBase.Infrastructure.Data.Constants;
 using NUnit.Framework;
+using Constants = Microting.eForm.Infrastructure.Constants.Constants;
 
 namespace Microting.AppointmentBase.Unit.Tests
 {
@@ -53,7 +53,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValues[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Version, appointmentPrefillFieldValues[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValues[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValues[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValues[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValues[0].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValues[0].UpdatedAt.ToString());
@@ -67,7 +67,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[0].AppointmentPrefillFieldValueId);
             Assert.AreEqual(appointmentPrefillFieldValue.Version, appointmentPrefillFieldValueVersions[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValueVersions[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValueVersions[0].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValueVersions[0].UpdatedAt.ToString());
@@ -133,7 +133,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValues[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Version, appointmentPrefillFieldValues[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValues[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValues[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValues[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValues[0].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValues[0].UpdatedAt.ToString());
@@ -147,7 +147,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(1, appointmentPrefillFieldValueVersions[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[0].AppointmentPrefillFieldValueId);
             Assert.AreEqual(1, appointmentPrefillFieldValueVersions[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValueVersions[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValueVersions[0].CreatedByUserId);
             Assert.AreEqual(oldUpdatedAt.ToString(), appointmentPrefillFieldValueVersions[0].UpdatedAt.ToString());
@@ -161,7 +161,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(2, appointmentPrefillFieldValueVersions[1].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[1].AppointmentPrefillFieldValueId);
             Assert.AreEqual(2, appointmentPrefillFieldValueVersions[1].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[1].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[1].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValueVersions[1].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValueVersions[1].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValueVersions[1].UpdatedAt.ToString());
@@ -219,7 +219,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValues[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Version, appointmentPrefillFieldValues[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointmentPrefillFieldValues[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Removed, appointmentPrefillFieldValues[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValues[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValues[0].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValues[0].UpdatedAt.ToString());
@@ -233,7 +233,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(1, appointmentPrefillFieldValueVersions[0].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[0].AppointmentPrefillFieldValueId);
             Assert.AreEqual(1, appointmentPrefillFieldValueVersions[0].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Created, appointmentPrefillFieldValueVersions[0].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValueVersions[0].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValueVersions[0].CreatedByUserId);
             Assert.AreEqual(oldUpdatedAt.ToString(), appointmentPrefillFieldValueVersions[0].UpdatedAt.ToString());
@@ -247,7 +247,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(2, appointmentPrefillFieldValueVersions[1].Id);
             Assert.AreEqual(appointmentPrefillFieldValue.Id, appointmentPrefillFieldValueVersions[1].AppointmentPrefillFieldValueId);
             Assert.AreEqual(2, appointmentPrefillFieldValueVersions[1].Version);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointmentPrefillFieldValueVersions[1].WorkflowState);
+            Assert.AreEqual(Constants.WorkflowStates.Removed, appointmentPrefillFieldValueVersions[1].WorkflowState);
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedAt.ToString(), appointmentPrefillFieldValueVersions[1].CreatedAt.ToString());
             Assert.AreEqual(appointmentPrefillFieldValue.CreatedByUserId, appointmentPrefillFieldValueVersions[1].CreatedByUserId);
             Assert.AreEqual(appointmentPrefillFieldValue.UpdatedAt.ToString(), appointmentPrefillFieldValueVersions[1].UpdatedAt.ToString());

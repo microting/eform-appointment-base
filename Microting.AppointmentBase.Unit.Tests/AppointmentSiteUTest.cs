@@ -236,7 +236,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(appointmentSite.CreatedByUserId, appointmentSites[0].CreatedByUserId);
             Assert.AreEqual(appointmentSite.UpdatedAt.ToString(), appointmentSites[0].UpdatedAt.ToString());
             Assert.AreEqual(appointmentSite.UpdatedByUserId, appointmentSites[0].UpdatedByUserId);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointmentSites[0].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed, appointmentSites[0].WorkflowState);
             
             Assert.AreEqual(1, appointmentSiteVersions[0].Id);
             Assert.AreEqual(appointmentSite.AppointmentId, appointmentSiteVersions[0].AppointmentId);
@@ -252,7 +252,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(appointmentSite.CreatedByUserId, appointmentSiteVersions[0].CreatedByUserId);
             Assert.AreEqual(oldUpdatedAt.ToString(), appointmentSiteVersions[0].UpdatedAt.ToString());
             Assert.AreEqual(appointmentSite.UpdatedByUserId, appointmentSiteVersions[0].UpdatedByUserId);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Created, appointmentSiteVersions[0].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Created, appointmentSiteVersions[0].WorkflowState);
             
             Assert.AreEqual(2, appointmentSiteVersions[1].Id);
             Assert.AreEqual(appointmentSite.AppointmentId, appointmentSiteVersions[1].AppointmentId);
@@ -268,7 +268,7 @@ namespace Microting.AppointmentBase.Unit.Tests
             Assert.AreEqual(appointmentSite.CreatedByUserId, appointmentSiteVersions[1].CreatedByUserId);
             Assert.AreEqual(appointmentSite.UpdatedAt.ToString(), appointmentSiteVersions[1].UpdatedAt.ToString());
             Assert.AreEqual(appointmentSite.UpdatedByUserId, appointmentSiteVersions[1].UpdatedByUserId);
-            Assert.AreEqual(eFormShared.Constants.WorkflowStates.Removed, appointmentSiteVersions[1].WorkflowState);
+            Assert.AreEqual(eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed, appointmentSiteVersions[1].WorkflowState);
         }
     }
 }
