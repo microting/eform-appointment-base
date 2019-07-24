@@ -23,7 +23,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using eFormShared;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
@@ -52,7 +51,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
             Version = 1;
-            WorkflowState = eFormShared.Constants.WorkflowStates.Created;
+            WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Created;
             
             dbContext.AppointmentSites.Add(this);
             dbContext.SaveChanges();
@@ -99,7 +98,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                 throw new NullReferenceException($"Could not find AppointmentSite with {Id}");
             }
 
-            appointmentSite.WorkflowState = eFormShared.Constants.WorkflowStates.Removed;
+            appointmentSite.WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed;
 
             if (dbContext.ChangeTracker.HasChanges())
             {

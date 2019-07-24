@@ -22,7 +22,6 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using eFormShared;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
@@ -47,7 +46,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
             Version = 1;
-            WorkflowState = eFormShared.Constants.WorkflowStates.Created;
+            WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Created;
             
             dbContext.AppointmentPrefillFieldValues.Add(this);
             dbContext.SaveChanges();
@@ -94,7 +93,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                 throw new NullReferenceException($"Could not find AppointmentPrefillFieldValue with {Id}");
             }
 
-            appointmentPrefillFieldValue.WorkflowState = eFormShared.Constants.WorkflowStates.Removed;
+            appointmentPrefillFieldValue.WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed;
 
             if (dbContext.ChangeTracker.HasChanges())
             {
