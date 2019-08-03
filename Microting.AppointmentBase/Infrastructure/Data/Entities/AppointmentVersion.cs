@@ -24,6 +24,8 @@ using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 {
+    using Enums;
+
     public class AppointmentVersion : BaseEntity
     {
         public int? AppointmentId { get; set; }
@@ -73,5 +75,13 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public string Response { get; set; }
 
         public short? ColorRule { get; set; }
+
+        public string ColorHex { get; set; }
+
+        public int? RepeatEvery { get; set; }
+        public RepeatType? RepeatType { get; set; }
+        public DateTime? RepeatUntil { get; set; }
+
+        public int? NextId { get; set; }
     }
 }
