@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microting.AppointmentBase.Infrastructure.Data;
 
 namespace Microting.AppointmentBase.Migrations
 {
     [DbContext(typeof(AppointmentPnDbContext))]
-    partial class AppointmentPnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190730154524_RecurringAppointments")]
+    partial class RecurringAppointments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

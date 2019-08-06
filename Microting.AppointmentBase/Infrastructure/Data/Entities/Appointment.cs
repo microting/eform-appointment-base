@@ -27,6 +27,8 @@ using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 {
+    using Enums;
+
     public class Appointment : BaseEntity
     {
         public Appointment()
@@ -73,6 +75,15 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public string Response { get; set; }
 
         public short? ColorRule { get; set; }
+
+        public string ColorHex { get; set; }
+
+        public int? RepeatEvery { get; set; }
+        public RepeatType? RepeatType { get; set; }
+        public DateTime? RepeatUntil { get; set; }
+
+        public int? NextId { get; set; }
+        public virtual Appointment Next { get; set; }
 
         public virtual ICollection<AppointmentSite> AppointmentSites { get; set; }
 
@@ -140,6 +151,10 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
             appointment.SdkeFormId = SdkeFormId;
             appointment.Response = Response;
             appointment.ColorRule = ColorRule;
+            appointment.ColorHex = ColorHex;
+            appointment.RepeatEvery = RepeatEvery;
+            appointment.RepeatType = RepeatType;
+            appointment.RepeatUntil = RepeatUntil;
             appointment.UpdatedByUserId = UpdatedByUserId;
 
             if (dbContext.ChangeTracker.HasChanges())
@@ -196,6 +211,10 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                 SdkeFormId = appointment.SdkeFormId,
                 Response = appointment.Response,
                 ColorRule = appointment.ColorRule,
+                ColorHex = appointment.ColorHex,
+                RepeatType = appointment.RepeatType,
+                RepeatUntil = appointment.RepeatUntil,
+                RepeatEvery = appointment.RepeatEvery,
                 AppointmentId = appointment.Id,
                 Version = appointment.Version,
                 CreatedAt = appointment.CreatedAt,
