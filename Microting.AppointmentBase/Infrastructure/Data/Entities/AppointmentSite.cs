@@ -27,6 +27,8 @@ using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 {
+    using eForm.Infrastructure.Constants;
+
     public class AppointmentSite : BaseEntity
     {
         [ForeignKey("Appointment")]
@@ -51,7 +53,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
             Version = 1;
-            WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Created;
+            WorkflowState = Constants.WorkflowStates.Created;
             
             dbContext.AppointmentSites.Add(this);
             dbContext.SaveChanges();
@@ -98,7 +100,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                 throw new NullReferenceException($"Could not find AppointmentSite with {Id}");
             }
 
-            appointmentSite.WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed;
+            appointmentSite.WorkflowState = Constants.WorkflowStates.Removed;
 
             if (dbContext.ChangeTracker.HasChanges())
             {
