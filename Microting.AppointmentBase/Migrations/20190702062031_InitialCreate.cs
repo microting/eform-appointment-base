@@ -30,31 +30,31 @@ namespace Microting.AppointmentBase.Migrations
         {
             //Setup for SQL Server Provider
 
-            var autoIDGenStrategy = "SqlServer:ValueGenerationStrategy";
-            object autoIDGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
+            var appointmentAutoIdGenStrategy = "SqlServer:ValueGenerationStrategy";
+            object appointmentAutoIdGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
 
             // Setup for MySQL Provider
             if (migrationBuilder.ActiveProvider == "Pomelo.EntityFrameworkCore.MySql")
             {
                 DbConfig.IsMySQL = true;
-                autoIDGenStrategy = "MySql:ValueGenerationStrategy";
-                autoIDGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
+                appointmentAutoIdGenStrategy = "MySql:ValueGenerationStrategy";
+                appointmentAutoIdGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
             }
             migrationBuilder.CreateTable(
                 name: "AppointmentPrefillFieldValueVersions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     AppointmentId = table.Column<int>(nullable: true),
-                    MicrotingSiteUid = table.Column<int>(nullable: false),
-                    FieldId = table.Column<int>(nullable: false),
+                    MicrotingSiteUid = table.Column<int>(),
+                    FieldId = table.Column<int>(),
                     FieldValue = table.Column<string>(nullable: true),
                     AppointmentFvId = table.Column<int>(nullable: true)
                 },
@@ -67,14 +67,14 @@ namespace Microting.AppointmentBase.Migrations
                 name: "Appointments",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     GlobalId = table.Column<string>(nullable: true),
                     StartAt = table.Column<DateTime>(nullable: true),
                     ExpireAt = table.Column<DateTime>(nullable: true),
@@ -102,16 +102,16 @@ namespace Microting.AppointmentBase.Migrations
                 name: "AppointmentSiteVersions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     AppointmentId = table.Column<int>(nullable: true),
-                    MicrotingSiteUid = table.Column<int>(nullable: false),
+                    MicrotingSiteUid = table.Column<int>(),
                     ExceptionString = table.Column<string>(nullable: true),
                     SdkCaseId = table.Column<string>(maxLength: 255, nullable: true),
                     ProcessingState = table.Column<string>(maxLength: 255, nullable: true),
@@ -127,14 +127,14 @@ namespace Microting.AppointmentBase.Migrations
                 name: "AppointmentVersions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     AppointmentId = table.Column<int>(nullable: true),
                     GlobalId = table.Column<string>(nullable: true),
                     StartAt = table.Column<DateTime>(nullable: true),
@@ -166,14 +166,14 @@ namespace Microting.AppointmentBase.Migrations
                 name: "PluginConfigurationValues",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     Name = table.Column<string>(nullable: true),
                     Value = table.Column<string>(nullable: true)
                 },
@@ -186,14 +186,14 @@ namespace Microting.AppointmentBase.Migrations
                 name: "PluginConfigurationValueVersions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     Name = table.Column<string>(nullable: true),
                     Value = table.Column<string>(nullable: true)
                 },
@@ -206,17 +206,17 @@ namespace Microting.AppointmentBase.Migrations
                 name: "AppointmentPrefillFieldValues",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     AppointmentId = table.Column<int>(nullable: true),
-                    MicrotingSiteUid = table.Column<int>(nullable: false),
-                    FieldId = table.Column<int>(nullable: false),
+                    MicrotingSiteUid = table.Column<int>(),
+                    FieldId = table.Column<int>(),
                     FieldValue = table.Column<string>(nullable: true),
                     AppointmentFvId = table.Column<int>(nullable: true)
                 },
@@ -235,16 +235,16 @@ namespace Microting.AppointmentBase.Migrations
                 name: "AppointmentSites",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation(autoIDGenStrategy, autoIDGenStrategyValue),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>()
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
+                    CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
-                    CreatedByUserId = table.Column<int>(nullable: false),
-                    UpdatedByUserId = table.Column<int>(nullable: false),
-                    Version = table.Column<int>(nullable: false),
+                    CreatedByUserId = table.Column<int>(),
+                    UpdatedByUserId = table.Column<int>(),
+                    Version = table.Column<int>(),
                     AppointmentId = table.Column<int>(nullable: true),
-                    MicrotingSiteUid = table.Column<int>(nullable: false),
+                    MicrotingSiteUid = table.Column<int>(),
                     ExceptionString = table.Column<string>(nullable: true),
                     SdkCaseId = table.Column<string>(maxLength: 255, nullable: true),
                     ProcessingState = table.Column<string>(maxLength: 255, nullable: true),

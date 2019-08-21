@@ -8,6 +8,8 @@ using Constants = Microting.eForm.Infrastructure.Constants.Constants;
 
 namespace Microting.AppointmentBase.Unit.Tests
 {
+    using eForm.Infrastructure.Constants;
+
     [TestFixture]
     public class AppointmentPrefillFieldValueUTest : DbTestFixture
     {

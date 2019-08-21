@@ -24,12 +24,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Base;
+using Microting.eForm.Infrastructure.Constants;
 
 namespace Microting.AppointmentBase.Infrastructure.Data.Entities
 {
     using Enums;
+    using Constants = eForm.Infrastructure.Constants.Constants;
 
-    public class Appointment : BaseEntity
+    public sealed class Appointment : BaseEntity
     {
         public Appointment()
         {
@@ -83,11 +85,11 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public DateTime? RepeatUntil { get; set; }
 
         public int? NextId { get; set; }
-        public virtual Appointment Next { get; set; }
+        public Appointment Next { get; set; }
 
-        public virtual ICollection<AppointmentSite> AppointmentSites { get; set; }
+        public ICollection<AppointmentSite> AppointmentSites { get; set; }
 
-        public virtual ICollection<AppointmentPrefillFieldValue> AppointmentPrefillFieldValues { get; set; }
+        public ICollection<AppointmentPrefillFieldValue> AppointmentPrefillFieldValues { get; set; }
 
         public override string ToString()
         {
@@ -116,7 +118,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
             Version = 1;
-            WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Created;
+            WorkflowState = Constants.WorkflowStates.Created;
             
             dbContext.Appointments.Add(this);
             dbContext.SaveChanges();
@@ -177,7 +179,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
                 throw new NullReferenceException($"Could not find Appointment with {Id}");
             }
 
-            appointment.WorkflowState = eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed;
+            appointment.WorkflowState = Constants.WorkflowStates.Removed;
 
             if (dbContext.ChangeTracker.HasChanges())
             {
