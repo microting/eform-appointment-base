@@ -31,7 +31,7 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
     using Enums;
     using Constants = eForm.Infrastructure.Constants.Constants;
 
-    public sealed class Appointment : BaseEntity
+    public class Appointment : BaseEntity
     {
         public Appointment()
         {
