@@ -85,11 +85,11 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Entities
         public DateTime? RepeatUntil { get; set; }
 
         public int? NextId { get; set; }
-        public Appointment Next { get; set; }
+        public virtual Appointment Next { get; set; }
 
-        public ICollection<AppointmentSite> AppointmentSites { get; set; }
+        public virtual ICollection<AppointmentSite> AppointmentSites { get; set; }
 
-        public ICollection<AppointmentPrefillFieldValue> AppointmentPrefillFieldValues { get; set; }
+        public virtual ICollection<AppointmentPrefillFieldValue> AppointmentPrefillFieldValues { get; set; }
 
         public override string ToString()
         {
