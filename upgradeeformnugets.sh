@@ -4,8 +4,8 @@ GIT_STATUS=`git status | grep "nothing to commit, working tree clean" | wc -l`
 if (( "$GIT_STATUS" > 0 )); then
 	git pull
 
-	dotnet add Microting.Microting.AppointmentBase/Microting.Microting.AppointmentBase.csproj package Microting.eForm
-	dotnet add Microting.Microting.AppointmentBase/Microting.Microting.AppointmentBase.csproj package Microting.eFormApi.BasePn
+	dotnet add Microting.AppointmentBase/Microting.AppointmentBase.csproj package Microting.eForm
+	dotnet add Microting.AppointmentBase/Microting.AppointmentBase.csproj package Microting.eFormApi.BasePn
 
 	EFORM_VERSION=`dotnet list package | grep 'Microting.eForm ' | cut -c54-60`
 	EFORM_BASEPN_VERSION=`dotnet list package | grep 'Microting.eFormApi.BasePn' | cut -c54-60`
