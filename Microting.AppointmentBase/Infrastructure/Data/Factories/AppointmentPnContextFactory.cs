@@ -30,7 +30,9 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Factories
         public AppointmentPnDbContext CreateDbContext(string[] args)
         {
             //args = new[]
-            //    {"data source=.\\sqlexpress;database=appointments-plugin1;integrated security=true"};
+            //    {"host=localhost;Database=appointment-pl;Uid=root;Pwd=111111;port=3306;Convert Zero Datetime = true;SslMode=none;PersistSecurityInfo=true;"};
+            //args = new[]
+            //    {"Data Source=.\\SQLEXPRESS;Database=appointment-pl;Integrated Security=True"};
             var optionsBuilder = new DbContextOptionsBuilder<AppointmentPnDbContext>();
             if (args.Any())
             {

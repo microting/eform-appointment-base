@@ -10,30 +10,22 @@ using Microting.AppointmentBase.Infrastructure.Data;
 namespace Microting.AppointmentBase.Migrations
 {
     [DbContext(typeof(AppointmentPnDbContext))]
-    [Migration("20191029154908_AddPluginPermission")]
+    [Migration("20191029235208_AddPluginPermission")]
     partial class AddPluginPermission
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            string autoIdGenStrategy = "SqlServer:ValueGenerationStrategy";
-            object autoIdGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
-            if (DbConfig.IsMySQL)
-            {
-                autoIdGenStrategy = "MySql:ValueGenerationStrategy";
-                autoIdGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
-            }
-
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microting.AppointmentBase.Infrastructure.Data.Entities.Appointment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Body");
 
@@ -108,7 +100,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AppointmentFvId");
 
@@ -144,7 +136,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AppointmentFvId");
 
@@ -180,7 +172,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AppointmentId");
 
@@ -220,7 +212,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AppointmentId");
 
@@ -260,7 +252,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AppointmentId");
 
@@ -342,7 +334,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -370,7 +362,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -398,7 +390,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -430,11 +422,13 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedAt");
 
                     b.Property<int>("CreatedByUserId");
+
+                    b.Property<int?>("FK_PluginGroupPermissionVersions_PluginGroupPermissionId");
 
                     b.Property<int>("GroupId");
 
@@ -443,8 +437,6 @@ namespace Microting.AppointmentBase.Migrations
                     b.Property<int>("PermissionId");
 
                     b.Property<int>("PluginGroupPermissionId");
-
-                    b.Property<int?>("PluginGroupPermissionId1");
 
                     b.Property<DateTime?>("UpdatedAt");
 
@@ -457,11 +449,9 @@ namespace Microting.AppointmentBase.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FK_PluginGroupPermissionVersions_PluginGroupPermissionId");
+
                     b.HasIndex("PermissionId");
-
-                    b.HasIndex("PluginGroupPermissionId");
-
-                    b.HasIndex("PluginGroupPermissionId1");
 
                     b.ToTable("PluginGroupPermissionVersions");
                 });
@@ -470,7 +460,7 @@ namespace Microting.AppointmentBase.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation(autoIdGenStrategy, autoIdGenStrategyValue);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimName");
 
@@ -525,19 +515,15 @@ namespace Microting.AppointmentBase.Migrations
 
             modelBuilder.Entity("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginGroupPermissionVersion", b =>
                 {
+                    b.HasOne("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginGroupPermission", "PluginGroupPermission")
+                        .WithMany()
+                        .HasForeignKey("FK_PluginGroupPermissionVersions_PluginGroupPermissionId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginPermission", "Permission")
                         .WithMany()
                         .HasForeignKey("PermissionId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginGroupPermission")
-                        .WithMany()
-                        .HasForeignKey("PluginGroupPermissionId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginGroupPermission", "PluginGroupPermission")
-                        .WithMany()
-                        .HasForeignKey("PluginGroupPermissionId1");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,23 +1,23 @@
-﻿namespace Microting.AppointmentBase.Migrations
-{
-    using System;
-    using Microsoft.EntityFrameworkCore.Metadata;
-    using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
+namespace Microting.AppointmentBase.Migrations
+{
     public partial class AddPluginPermission : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             //Setup for SQL Server Provider
-            var autoIdGenStrategy = "SqlServer:ValueGenerationStrategy";
-            object autoIdGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
+            var appointmentAutoIdGenStrategy = "SqlServer:ValueGenerationStrategy";
+            object appointmentAutoIdGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
 
             // Setup for MySQL Provider
             if (migrationBuilder.ActiveProvider == "Pomelo.EntityFrameworkCore.MySql")
             {
                 DbConfig.IsMySQL = true;
-                autoIdGenStrategy = "MySql:ValueGenerationStrategy";
-                autoIdGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
+                appointmentAutoIdGenStrategy = "MySql:ValueGenerationStrategy";
+                appointmentAutoIdGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
             }
 
             migrationBuilder.AddColumn<bool>(
@@ -31,7 +31,7 @@
                 columns: table => new
                 {
                     Id = table.Column<int>()
-                        .Annotation(autoIdGenStrategy, autoIdGenStrategyValue),
+                        .Annotation(appointmentAutoIdGenStrategy, appointmentAutoIdGenStrategyValue),
                     CreatedAt = table.Column<DateTime>(),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     WorkflowState = table.Column<string>(maxLength: 255, nullable: true),
@@ -42,45 +42,34 @@
                     PermissionId = table.Column<int>(),
                     IsEnabled = table.Column<bool>(),
                     PluginGroupPermissionId = table.Column<int>(),
-                    PluginGroupPermissionId1 = table.Column<int>(nullable: true)
+                    FK_PluginGroupPermissionVersions_PluginGroupPermissionId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PluginGroupPermissionVersions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PluginGroupPermissionVersions_PluginGroupPermissions_FK_PluginGroupPermissionVersions_PluginGroupPermissionId",
+                        column: x => x.FK_PluginGroupPermissionVersions_PluginGroupPermissionId,
+                        principalTable: "PluginGroupPermissions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PluginGroupPermissionVersions_PluginPermissions_PermissionId",
                         column: x => x.PermissionId,
                         principalTable: "PluginPermissions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PluginGroupPermissionVersions_PluginGroupPermissions_PluginGroupPermissionId",
-                        column: x => x.PluginGroupPermissionId,
-                        principalTable: "PluginGroupPermissions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_PluginGroupPermissionVersions_PluginGroupPermissions_PluginGroupPermissionId1",
-                        column: x => x.PluginGroupPermissionId1,
-                        principalTable: "PluginGroupPermissions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PluginGroupPermissionVersions_FK_PluginGroupPermissionVersions_PluginGroupPermissionId",
+                table: "PluginGroupPermissionVersions",
+                column: "FK_PluginGroupPermissionVersions_PluginGroupPermissionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PluginGroupPermissionVersions_PermissionId",
                 table: "PluginGroupPermissionVersions",
                 column: "PermissionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PluginGroupPermissionVersions_PluginGroupPermissionId",
-                table: "PluginGroupPermissionVersions",
-                column: "PluginGroupPermissionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PluginGroupPermissionVersions_PluginGroupPermissionId1",
-                table: "PluginGroupPermissionVersions",
-                column: "PluginGroupPermissionId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
