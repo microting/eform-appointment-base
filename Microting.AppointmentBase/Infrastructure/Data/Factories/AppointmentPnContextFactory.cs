@@ -29,29 +29,11 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Factories
     {
         public AppointmentPnDbContext CreateDbContext(string[] args)
         {
-            //args = new[]
-            //    {"host=localhost;Database=appointment-pl;Uid=root;Pwd=111111;port=3306;Convert Zero Datetime = true;SslMode=none;PersistSecurityInfo=true;"};
-            //args = new[]
-            //    {"Data Source=.\\SQLEXPRESS;Database=appointment-pl;Integrated Security=True"};
+            var defaultCs = "Server = localhost; port = 3306; Database = appointments-pn; user = root; Convert Zero Datetime = true;";
             var optionsBuilder = new DbContextOptionsBuilder<AppointmentPnDbContext>();
-            if (args.Any())
-            {
-                if (args.FirstOrDefault().ToLower().Contains("convert zero datetime"))
-                {
-                    optionsBuilder.UseMySql(args.FirstOrDefault());
-                }
-                else
-                {
-                    optionsBuilder.UseSqlServer(args.FirstOrDefault());
-                }
-            }
-            else
-            {
-                throw new ArgumentNullException("Connection string not present");
-            }
-//            optionsBuilder.UseSqlServer(@"data source=(LocalDb)\SharedInstance;Initial catalog=appointment-base;Integrated Security=True");
-//            dotnet ef migrations add InitialCreate --project Microting.AppointmentBase --startup-project DBMigrator
+            optionsBuilder.UseMySql(args.Any() ? args[0]: defaultCs);
             optionsBuilder.UseLazyLoadingProxies(true);
+
             return new AppointmentPnDbContext(optionsBuilder.Options);
         }
     }
