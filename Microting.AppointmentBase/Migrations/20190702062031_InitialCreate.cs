@@ -31,7 +31,7 @@ namespace Microting.AppointmentBase.Migrations
             //Setup for SQL Server Provider
 
             var appointmentAutoIdGenStrategy = "SqlServer:ValueGenerationStrategy";
-            object appointmentAutoIdGenStrategyValue = SqlServerValueGenerationStrategy.IdentityColumn;
+            object appointmentAutoIdGenStrategyValue = MySqlValueGenerationStrategy.IdentityColumn;
 
             // Setup for MySQL Provider
             if (migrationBuilder.ActiveProvider == "Pomelo.EntityFrameworkCore.MySql")
