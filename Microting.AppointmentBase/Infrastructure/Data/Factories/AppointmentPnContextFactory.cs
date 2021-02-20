@@ -34,8 +34,8 @@ namespace Microting.AppointmentBase.Infrastructure.Data.Factories
             var optionsBuilder = new DbContextOptionsBuilder<AppointmentPnDbContext>();
             optionsBuilder.UseMySql(args.Any() ? args[0] : defaultCs, mysqlOptions =>
             {
-                mysqlOptions.ServerVersion(new Version(10, 4, 0), ServerType.MariaDb);
-            });            optionsBuilder.UseLazyLoadingProxies(true);
+                mysqlOptions.ServerVersion(new Version(10, 4, 0), ServerType.MariaDb).EnableRetryOnFailure();
+            });
 
             return new AppointmentPnDbContext(optionsBuilder.Options);
         }
