@@ -8,7 +8,7 @@ if (( "$GIT_STATUS" > 0 )); then
 
 	PACKAGES=('Microting.eForm' 'Microting.eFormApi.BasePn' 'Microsoft.EntityFrameworkCore' 'Microsoft.EntityFrameworkCore.Design' 'Microsoft.EntityFrameworkCore.Relational')
 	PROJECT_NAME='Microting.AppointmentBase.csproj'
-	REPOSITORY='eform-appointmentBase'
+	REPOSITORY='eform-appointment-base'
 
 	for PACKAGE_NAME in ${PACKAGES[@]}; do
 
