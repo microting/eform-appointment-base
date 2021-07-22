@@ -1,5 +1,14 @@
 # Changelog
 
+## [v2.1.24](https://github.com/microting/eform-appointment-base/tree/v2.1.24) (2021-07-22)
+
+[Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.1.23...v2.1.24)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.0.30 to 3.0.31 [\#158](https://github.com/microting/eform-appointment-base/issues/158)
+- Bump Microting.eForm from 5.2.17 to 5.2.18 [\#157](https://github.com/microting/eform-appointment-base/issues/157)
+
 ## [v2.1.23](https://github.com/microting/eform-appointment-base/tree/v2.1.23) (2021-07-15)
 
 [Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.1.22...v2.1.23)
