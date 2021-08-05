@@ -6,14 +6,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.7" />
-        <PackageReference Include="Microting.eForm" Version="5.2.14" />
-        <PackageReference Include="Microting.eFormApi.BasePn" Version="3.0.27" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.8" />
+        <PackageReference Include="Microting.eForm" Version="5.2.22" />
+        <PackageReference Include="Microting.eFormApi.BasePn" Version="3.0.34" />
     </ItemGroup>
 
     <ItemGroup>
