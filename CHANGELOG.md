@@ -1,5 +1,17 @@
 # Changelog
 
+## [v2.2.16](https://github.com/microting/eform-appointment-base/tree/v2.2.16) (2021-11-14)
+
+[Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.2.15...v2.2.16)
+
+**Implemented enhancements:**
+
+- Bump Microsoft.EntityFrameworkCore.Relational from 5.0.11 to 6.0.0 [\#228](https://github.com/microting/eform-appointment-base/issues/228)
+- Bump Microsoft.EntityFrameworkCore.Design from 5.0.11 to 6.0.0 [\#227](https://github.com/microting/eform-appointment-base/issues/227)
+- Bump Microsoft.EntityFrameworkCore from 5.0.11 to 6.0.0 [\#226](https://github.com/microting/eform-appointment-base/issues/226)
+- Bump Microting.eFormApi.BasePn from 3.0.64 to 3.1.0 [\#225](https://github.com/microting/eform-appointment-base/issues/225)
+- Bump Microting.eForm from 5.2.57 to 5.3.0 [\#224](https://github.com/microting/eform-appointment-base/issues/224)
+
 ## [v2.2.15](https://github.com/microting/eform-appointment-base/tree/v2.2.15) (2021-11-04)
 
 [Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.2.14...v2.2.15)
@@ -123,7 +135,6 @@
 - Bump Microsoft.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#196](https://github.com/microting/eform-appointment-base/issues/196)
 - Bump Microting.eFormApi.BasePn from 3.0.47 to 3.0.49 [\#195](https://github.com/microting/eform-appointment-base/issues/195)
 - Bump Microting.eForm from 5.2.37 to 5.2.39 [\#194](https://github.com/microting/eform-appointment-base/issues/194)
-- Bump Microting.eForm from 5.2.36 to 5.2.37 [\#189](https://github.com/microting/eform-appointment-base/issues/189)
 
 **Merged pull requests:**
 
@@ -136,6 +147,7 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.0.46 to 3.0.47 [\#190](https://github.com/microting/eform-appointment-base/issues/190)
+- Bump Microting.eForm from 5.2.36 to 5.2.37 [\#189](https://github.com/microting/eform-appointment-base/issues/189)
 
 ## [v2.1.36](https://github.com/microting/eform-appointment-base/tree/v2.1.36) (2021-09-14)
 
@@ -227,7 +239,6 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.0.34 to 3.0.35 [\#167](https://github.com/microting/eform-appointment-base/issues/167)
-- Bump Microting.eForm from 5.2.22 to 5.2.23 [\#166](https://github.com/microting/eform-appointment-base/issues/166)
 
 ## [v2.1.26](https://github.com/microting/eform-appointment-base/tree/v2.1.26) (2021-08-05)
 
@@ -235,6 +246,7 @@
 
 **Implemented enhancements:**
 
+- Bump Microting.eForm from 5.2.22 to 5.2.23 [\#166](https://github.com/microting/eform-appointment-base/issues/166)
 - Bump Microting.eFormApi.BasePn from 3.0.33 to 3.0.34 [\#165](https://github.com/microting/eform-appointment-base/issues/165)
 - Bump Microting.eForm from 5.2.21 to 5.2.22 [\#164](https://github.com/microting/eform-appointment-base/issues/164)
 
@@ -280,7 +292,6 @@
 
 - Bump NUnit3TestAdapter from 3.17.0 to 4.0.0 [\#138](https://github.com/microting/eform-appointment-base/pull/138) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.NET.Test.Sdk from 16.9.4 to 16.10.0 [\#132](https://github.com/microting/eform-appointment-base/pull/132) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump Microsoft.NET.Test.Sdk from 16.7.1 to 16.8.3 [\#9](https://github.com/microting/eform-appointment-base/pull/9) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
 
 ## [v2.1.20](https://github.com/microting/eform-appointment-base/tree/v2.1.20) (2021-06-09)
 
@@ -389,6 +400,10 @@
 
 - Bump Microting.eFormApi.BasePn from 2.0.93 to 2.0.97 [\#60](https://github.com/microting/eform-appointment-base/issues/60)
 - Bump Microting.eForm from 4.3.15 to 4.4.1 [\#59](https://github.com/microting/eform-appointment-base/issues/59)
+
+**Merged pull requests:**
+
+- Bump Microsoft.NET.Test.Sdk from 16.7.1 to 16.8.3 [\#9](https://github.com/microting/eform-appointment-base/pull/9) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
 
 ## [v2.0.51](https://github.com/microting/eform-appointment-base/tree/v2.0.51) (2021-02-15)
 
