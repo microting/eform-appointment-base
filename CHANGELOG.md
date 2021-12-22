@@ -1,5 +1,28 @@
 # Changelog
 
+## [v2.2.30](https://github.com/microting/eform-appointment-base/tree/v2.2.30) (2021-12-22)
+
+[Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.2.29...v2.2.30)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.1.13 to 3.1.14 [\#248](https://github.com/microting/eform-appointment-base/issues/248)
+- Bump Microting.eForm from 5.3.19 to 5.3.20 [\#247](https://github.com/microting/eform-appointment-base/issues/247)
+
+**Merged pull requests:**
+
+- Bump NUnit3TestAdapter from 4.0.0 to 4.1.0 [\#219](https://github.com/microting/eform-appointment-base/pull/219) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.NET.Test.Sdk from 16.11.0 to 17.0.0 [\#211](https://github.com/microting/eform-appointment-base/pull/211) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.2.29](https://github.com/microting/eform-appointment-base/tree/v2.2.29) (2021-12-21)
+
+[Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.2.28...v2.2.29)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.1.12 to 3.1.13 [\#246](https://github.com/microting/eform-appointment-base/issues/246)
+- Bump Microting.eForm from 5.3.17 to 5.3.19 [\#245](https://github.com/microting/eform-appointment-base/issues/245)
+
 ## [v2.2.28](https://github.com/microting/eform-appointment-base/tree/v2.2.28) (2021-12-19)
 
 [Full Changelog](https://github.com/microting/eform-appointment-base/compare/v2.2.27...v2.2.28)
@@ -7,6 +30,7 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.1.11 to 3.1.12 [\#244](https://github.com/microting/eform-appointment-base/issues/244)
+- Bump Microting.eForm from 5.3.16 to 5.3.17 [\#243](https://github.com/microting/eform-appointment-base/issues/243)
 
 ## [v2.2.27](https://github.com/microting/eform-appointment-base/tree/v2.2.27) (2021-12-16)
 
@@ -23,7 +47,6 @@
 
 **Implemented enhancements:**
 
-- Bump Microting.eForm from 5.3.16 to 5.3.17 [\#243](https://github.com/microting/eform-appointment-base/issues/243)
 - Bump Microting.eFormApi.BasePn from 3.1.9 to 3.1.10 [\#240](https://github.com/microting/eform-appointment-base/issues/240)
 
 ## [v2.2.25](https://github.com/microting/eform-appointment-base/tree/v2.2.25) (2021-12-15)
@@ -301,7 +324,6 @@
 
 - Bump Microsoft.EntityFrameworkCore.Relational from 5.0.8 to 5.0.9 [\#176](https://github.com/microting/eform-appointment-base/issues/176)
 - Bump Microsoft.EntityFrameworkCore.Design from 5.0.8 to 5.0.9 [\#175](https://github.com/microting/eform-appointment-base/issues/175)
-- Bump Microsoft.EntityFrameworkCore from 5.0.8 to 5.0.9 [\#174](https://github.com/microting/eform-appointment-base/issues/174)
 - Bump Microting.eFormApi.BasePn from 3.0.38 to 3.0.40 [\#173](https://github.com/microting/eform-appointment-base/issues/173)
 - Bump Microting.eForm from 5.2.27 to 5.2.30 [\#172](https://github.com/microting/eform-appointment-base/issues/172)
 
@@ -311,6 +333,7 @@
 
 **Implemented enhancements:**
 
+- Bump Microsoft.EntityFrameworkCore from 5.0.8 to 5.0.9 [\#174](https://github.com/microting/eform-appointment-base/issues/174)
 - Bump Microting.eFormApi.BasePn from 3.0.37 to 3.0.38 [\#171](https://github.com/microting/eform-appointment-base/issues/171)
 - Bump Microting.eForm from 5.2.26 to 5.2.27 [\#170](https://github.com/microting/eform-appointment-base/issues/170)
 
@@ -331,6 +354,7 @@
 
 - Bump Microting.eFormApi.BasePn from 3.0.34 to 3.0.35 [\#167](https://github.com/microting/eform-appointment-base/issues/167)
 - Bump Microting.eForm from 5.2.22 to 5.2.23 [\#166](https://github.com/microting/eform-appointment-base/issues/166)
+- Bump Microsoft.EntityFrameworkCore.Design from 5.0.7 to 5.0.8 [\#153](https://github.com/microting/eform-appointment-base/issues/153)
 
 ## [v2.1.26](https://github.com/microting/eform-appointment-base/tree/v2.1.26) (2021-08-05)
 
@@ -366,7 +390,6 @@
 **Implemented enhancements:**
 
 - Bump Microsoft.EntityFrameworkCore.Relational from 5.0.7 to 5.0.8 [\#154](https://github.com/microting/eform-appointment-base/issues/154)
-- Bump Microsoft.EntityFrameworkCore.Design from 5.0.7 to 5.0.8 [\#153](https://github.com/microting/eform-appointment-base/issues/153)
 - Bump Microsoft.EntityFrameworkCore from 5.0.7 to 5.0.8 [\#152](https://github.com/microting/eform-appointment-base/issues/152)
 - Bump Microting.eFormApi.BasePn from 3.0.28 to 3.0.30 [\#151](https://github.com/microting/eform-appointment-base/issues/151)
 - Bump Microting.eForm from 5.2.15 to 5.2.17 [\#150](https://github.com/microting/eform-appointment-base/issues/150)
